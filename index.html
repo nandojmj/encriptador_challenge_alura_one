@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Encriptador de texto - Alura Challenges ONE</title>
+    <title>Encriptador de texto - Alura Challenges ONE G6 2024</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
@@ -27,18 +27,20 @@
         <section class="caja-principal">
             
             <div>
-                <textarea placeholder="Ingrese el texto" id="textoEntrada"></textarea>
-                <div class="botones-principal">
-                    <a href="" class="botones" id="btnEncriptar">Encriptar</a>
-                    <a href="" class="botones" id="btnDesencriptar">Desencriptar</a>
-                    
+                <textarea placeholder="Ingrese el texto aqui" id="textoEntrada"></textarea>
+
+                <div class="alerta">
+                    <img src="imagenes/alerta.svg" alt="alerta"> <p>Solo letras minúsculas y sin acentos</p>
                 </div>
-            </div>
+                <div class="botones-principal">
+                    <input type="button" class="botones" id="btnEncriptar" value="Encriptar">
+                    <input type="button" class="botones" id="btnDesencriptar" value="Desencriptar">                     </div>
+                 </div>
             
             <div>
                 <textarea placeholder="Resultado" id="textoResultado"></textarea>
-                <div class="botones-principal">
-                    <a href="" class="botones" id="copiarPortapapeles">Copiar</a>
+                <div class="boton-copiar">
+                    <input type="button" class="botones" id="copiarPortapapeles"value="Copiar">
                 </div>
             </div>         
         </section>

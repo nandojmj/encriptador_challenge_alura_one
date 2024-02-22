@@ -1,7 +1,7 @@
 
 /* Requisito para Encriptacion de Texto: Las "llaves" de 
    encriptación que utilizaremos son las siguientes:
-   
+
 La letra "e" es convertida para "enter"
 La letra "i" es convertida para "imes"
 La letra "a" es convertida para "ai"
@@ -9,17 +9,19 @@ La letra "o" es convertida para "ober"
 La letra "u" es convertida para "ufat"
 */
 
-/*******************Declaración de variables***********************************/
+/*******************Declaración de variables**********************************/
+
 const btnEncriptar = document.getElementById('btnEncriptar');
-btnEncriptar.addEventListener('click', encriptarTexto);
+btnEncriptar.onclick = encriptarTexto;
 
 const btnDesencriptar = document.getElementById("btnDesencriptar");
-btnDesencriptar.addEventListener('click', desencriptarTexto)
+btnDesencriptar.onclick = desencriptarTexto;
 
 const btnCopiar = document.getElementById('copiarPortapapeles');
-btnCopiar.addEventListener('click', copiarPortapapeles);
+btnCopiar.onclick = copiarPortapapeles;
 
 /*****************Función para encriptar texto************************************/
+
 function encriptarTexto(e) {
     e.preventDefault();
     let inputTexto = document.getElementById("textoEntrada").value;
@@ -59,6 +61,7 @@ function desencriptarTexto(e) {
 }
 
 /*funcion para validación: requisito del proyecto, no se aceptarán mayúsculas ni caracteres especiales*/
+
 function validarEntrada(texto) {
     return /^[a-z\s]+$/.test(texto);
 }

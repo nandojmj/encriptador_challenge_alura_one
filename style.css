@@ -24,10 +24,9 @@
     /* el borde de cada uno de los item sera el limite del espacio*/
 }
 
-
 body{
     font-size: 17px;
-    background-color: #131b1b;
+    background-color: #1e2f2f;
 }
 
 main{
@@ -58,6 +57,9 @@ textarea{
     border-radius: 16px;
     font-size: 16px;
     background: url(imagenes/bg1.jpg);
+    /*box-shadow: inset -2px 8px 9px 1px rgba(30,47,47,0.65);*/
+    
+
 }
 
 textarea::placeholder{
@@ -68,27 +70,42 @@ textarea:focus{ /* Selecciona cualquier <input> cuando se enfoca */
     border: 1px solid #96b9b9;
 }
 
+.alerta{
+    display: flex;
+    color: #E8E8E8;
+    font-family: sans-serif;
+}
+
 .botones-principal{
     margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 40px;
 }
+
+.boton-copiar{
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
 .botones{
     display: inline-block;
     width: 35%;
     background-color: #FFFFFF;
     color: #294444;
     text-decoration: none;
-    padding: 12px 0;
+    padding: 11px 0;
     text-align: center;
     border-radius: 50px;
     border: 2px solid #96b9b9;
     transition: all .3s ease;
     cursor: pointer;
     font-family: sans-serif;
+    font-size: 16px;
 }
-.botones:hover{ /* cuando el usuario pasa el cursor sobre el elemento produce un cambio*/
+
+.botones:hover{ 
     background-color: transparent;
     color: #FFFFFF;
 }
@@ -106,8 +123,7 @@ textarea:focus{ /* Selecciona cualquier <input> cuando se enfoca */
     color: #96b9b9;/
 }
 
-
-/* CSS para responcive*/
+/* CSS para responsive*/
 
 @media screen and (max-width: 480px){
     .encabezado h1{
