@@ -76,7 +76,7 @@ function copiarPortapapeles(e) {
     e.preventDefault();
     let textoResultado = document.getElementById("textoResultado").textContent;
     if (!textoResultado) {
-        alert("Por favor, ingresa un texto para encriptar o desencriptar.");
+        alert("Ningun mensaje fue encontrado.Por favor, ingresa un texto para encriptar o desencriptar.");
         return;
     }
     navigator.clipboard.writeText(textoResultado);
