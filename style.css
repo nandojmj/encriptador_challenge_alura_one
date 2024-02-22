@@ -24,12 +24,6 @@
     /* el borde de cada uno de los item sera el limite del espacio*/
 }
 
-@media screen and (max-width:480px){
-   .encabezado h1{
-        width: auto;
-        font-size: 20px;
-    }
-}
 
 body{
     font-size: 17px;
@@ -59,12 +53,9 @@ textarea{
     border: none;
     height: 180px;
     padding: 16px;
-    /*outline: none;
-    /*resize: vertical;*/
     background-color: #597b7a;
     color:  #FFFFFF;
     border-radius: 16px;
-    /*transition: all .3s;*/
     font-size: 16px;
     background: url(imagenes/bg1.jpg);
 }
@@ -102,7 +93,8 @@ textarea:focus{ /* Selecciona cualquier <input> cuando se enfoca */
     color: #FFFFFF;
 }
 
-.footer p{ /* Pie de pagina*/
+/* CSS para el footer - Pie de pagina*/
+.footer p{ 
     text-align: center;
     padding: 50px 20px;
     color: #ffffff;
@@ -114,7 +106,15 @@ textarea:focus{ /* Selecciona cualquier <input> cuando se enfoca */
     color: #96b9b9;/
 }
 
+
+/* CSS para responcive*/
+
 @media screen and (max-width: 480px){
+    .encabezado h1{
+        width: auto;
+        font-size: 20px;
+    }
+    
     main{
         width: auto;   
     }

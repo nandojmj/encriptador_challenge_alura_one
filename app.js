@@ -1,5 +1,7 @@
 
-/* Encriptacion de Texto
+/* Requisito para Encriptacion de Texto: Las "llaves" de 
+   encriptación que utilizaremos son las siguientes:
+   
 La letra "e" es convertida para "enter"
 La letra "i" es convertida para "imes"
 La letra "a" es convertida para "ai"
@@ -7,69 +9,66 @@ La letra "o" es convertida para "ober"
 La letra "u" es convertida para "ufat"
 */
 
-/*Encriptar el texto*/
+/*******************Declaración de variables***********************************/
 const btnEncriptar = document.getElementById('btnEncriptar');
 btnEncriptar.addEventListener('click', encriptarTexto);
 
+const btnDesencriptar = document.getElementById("btnDesencriptar");
+btnDesencriptar.addEventListener('click', desencriptarTexto)
+
+const btnCopiar = document.getElementById('copiarPortapapeles');
+btnCopiar.addEventListener('click', copiarPortapapeles);
+
+/*****************Función para encriptar texto************************************/
 function encriptarTexto(e) {
     e.preventDefault();
     let inputTexto = document.getElementById("textoEntrada").value;
     
     if (!validarEntrada(inputTexto)) {
-        alert("Por favor, ingresa solo letras minúsculas sin acentos.");
+        alert("Por favor, ingresa solo letras minúsculas sin caracteres especiales.");
         return;
     }
-    
     var textoEncriptado = inputTexto
-    .replace(/e/g, "enter")
-    .replace(/i/g, "imes")
-    .replace(/a/g, "ai")
-    .replace(/o/g, "ober")
-    .replace(/u/g, "ufat");
+        .replace(/e/g, "enter")
+        .replace(/i/g, "imes")
+        .replace(/a/g, "ai")
+        .replace(/o/g, "ober")
+        .replace(/u/g, "ufat");
     
     document.getElementById("textoResultado").textContent = textoEncriptado;
-    
 }
 
-/*Desencriptar el texto*/
-const btnDesencriptar = document.getElementById("btnDesencriptar");
-btnDesencriptar.addEventListener('click', desencriptarTexto)
-
+/*************Función para desencriptar texto************************************/
 function desencriptarTexto(e) {
     e.preventDefault();
     let inputTexto = document.getElementById("textoEntrada").value;
     
     if (!validarEntrada(inputTexto)) {
-        alert("Por favor, ingresa solo letras minúsculas sin acentos.");
+        alert("Por favor, ingresa solo letras minúsculas sin caracteres especiales.");
         return;
     }
     
     let textoDesencriptado = inputTexto
+        .replace(/ai/g, 'a')
+        .replace(/ober/g, 'o')
+        .replace(/enter/g, 'e')
+        .replace(/ufat/g, 'u')
+        .replace(/imes/g, 'i');
 
-    .replace(/ai/g, 'a')
-    .replace(/ober/g, 'o')
-    .replace(/enter/g, 'e')
-    .replace(/ufat/g, 'u')
-    .replace(/imes/g, 'i');
-
-        document.getElementById("textoResultado").textContent = textoDesencriptado;
-       
+        document.getElementById("textoResultado").textContent = textoDesencriptado;    
 }
 
-/*validar que solo contiene letras minúsculas, espacios y sin acentos*/
+/*funcion para validación: requisito del proyecto, no se aceptarán mayúsculas ni caracteres especiales*/
 function validarEntrada(texto) {
     return /^[a-z\s]+$/.test(texto);
 }
 
-/*Borrar texto del area de texto */
+/*****************Borrar texto del area de texto***********************************/
 function borrarEntrada() {
     document.getElementById("textoEntrada").value = "";
 }
 
-/*Copiar texto al portapapeles*/
-const btnCopiar = document.getElementById('copiarPortapapeles');
-btnCopiar.addEventListener('click', copiarPortapapeles);
-
+/*Extra:funcion copiar valores del campo de presentación de mensajes al portapapeles*/
 function copiarPortapapeles(e) {
     e.preventDefault();
     let textoResultado = document.getElementById("textoResultado").textContent;
